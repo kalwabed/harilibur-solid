@@ -1,0 +1,23 @@
+.date_day {
+  font-size: small;
+}
+
+.date_number {
+  font-size: large;
+  font-weight: bold;
+}
+
+.card_sider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.3rem;
+  width: 15%;
+}
+
+@media (min-width: 768px) {
+  .date_number {
+    font-size: xx-large;
+  }
+}

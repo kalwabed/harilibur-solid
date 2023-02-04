@@ -1,18 +1,10 @@
-import Counter from "~/components/Counter";
-import "./index.css";
+import RootLayout from '~/components/layout/root-layout'
+import UpcomingHolidays from '~/components/upcoming-holidays'
 
 export default function Home() {
   return (
-    <main>
-      <h1>Hello world!</h1>
-      <Counter />
-      <p>
-        Visit{" "}
-        <a href="https://solidjs.com" target="_blank">
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-    </main>
-  );
+    <RootLayout>
+      <UpcomingHolidays headerTitle="Bulan ini" upcomingHolidays={[]} />
+    </RootLayout>
+  )
 }

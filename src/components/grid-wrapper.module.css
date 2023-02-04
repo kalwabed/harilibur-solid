@@ -1,0 +1,18 @@
+.section {
+  display: grid;
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  max-width: 32rem;
+  margin: 1rem auto;
+  width: 100%;
+  gap: 0.5rem;
+  background-color: var(--gray2);
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.h2 {
+  font-size: x-large;
+  margin: 1rem 0 !important;
+  font-weight: bold;
+}

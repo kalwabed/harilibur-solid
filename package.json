@@ -26,5 +26,9 @@
     "undici": "^5.15.1",
     "vite": "^3.2.5",
     "vitest": "^0.26.3"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.15",
+    "date-fns": "^2.29.3"
   }
 }

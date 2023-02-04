@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/inter': ^4.5.15
   '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.7.0
   '@solidjs/testing-library': ^0.5.2
@@ -8,6 +9,7 @@ specifiers:
   '@types/testing-library__jest-dom': ^5.14.5
   '@vitest/coverage-c8': ^0.26.3
   '@vitest/ui': ^0.26.3
+  date-fns: ^2.29.3
   jsdom: ^20.0.3
   solid-js: ^1.6.9
   solid-start: ^0.2.19
@@ -16,6 +18,10 @@ specifiers:
   undici: ^5.15.1
   vite: ^3.2.5
   vitest: ^0.26.3
+
+dependencies:
+  '@fontsource/inter': 4.5.15
+  date-fns: 2.29.3
 
 devDependencies:
   '@solidjs/meta': 0.28.2_solid-js@1.6.10
@@ -1272,6 +1278,10 @@ packages:
     dev: true
     optional: true
 
+  /@fontsource/inter/4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
+    dev: false
+
   /@hapi/hoek/9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
     dev: true
@@ -2090,6 +2100,11 @@ packages:
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
     dev: true
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

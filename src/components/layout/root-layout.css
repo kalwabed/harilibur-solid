@@ -1,0 +1,115 @@
+:root {
+  --gray1: hsl(0, 0%, 8.5%);
+  --gray2: hsl(0, 0%, 11%);
+  --gray3: hsl(0, 0%, 13.6%);
+  --gray4: hsl(0, 0%, 15.8%);
+  --gray5: hsl(0, 0%, 17.9%);
+  --gray6: hsl(0, 0%, 20.5%);
+  --gray7: hsl(0, 0%, 24.3%);
+  --gray8: hsl(0, 0%, 31.2%);
+  --gray9: hsl(0, 0%, 43.9%);
+  --gray10: hsl(0, 0%, 49.4%);
+  --gray11: hsl(0, 0%, 62.8%);
+  --gray12: hsl(0, 0%, 93%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'InterVariable', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  background-color: var(--gray1);
+  color: var(--gray12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23343434' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+h1 {
+  font-weight: bold;
+  font-size: xx-large;
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+
+header {
+  max-width: 36rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: var(--gray6);
+}
+
+.today {
+  margin-top: 5px;
+  color: var(--gray11);
+}
+
+main {
+  width: 100%;
+  max-width: 32rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  isolation: isolate;
+}
+
+footer {
+  width: 100%;
+  padding: 2rem;
+  margin-top: auto;
+  background-color: var(--gray2);
+  border-top: 1px solid var(--gray6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  border-bottom: 1px dotted;
+}
+
+.link:hover {
+  color: var(--gray11);
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
