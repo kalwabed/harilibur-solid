@@ -5,6 +5,7 @@ dist
 .vercel
 .netlify
 netlify
+coverage
 
 # dependencies
 /node_modules
