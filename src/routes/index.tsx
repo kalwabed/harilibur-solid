@@ -1,4 +1,5 @@
 import { createRouteData, useRouteData } from 'solid-start'
+import AllHolidays from '~/components/all-holidays'
 
 import RootLayout from '~/components/layout/root-layout'
 import UpcomingHolidays from '~/components/upcoming-holidays'
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <RootLayout>
       <UpcomingHolidays headerTitle="Bulan ini" upcomingHolidays={extractedHoliday()?.upcomings} />
+      <AllHolidays headerTitle="Bulan depan" holidays={extractedHoliday()?.nextMonths} />
     </RootLayout>
   )
 }

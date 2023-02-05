@@ -1,4 +1,4 @@
-import { For } from 'solid-js'
+import { For, Show } from 'solid-js'
 
 import { HolidayFetcher } from '~/utils/fetcher'
 import Card from './card'
@@ -15,11 +15,11 @@ const UpcomingHolidays = ({ headerTitle, upcomingHolidays }: UpcomingHolidaysPro
 
   return (
     <GridWrapper headerTitle={headerTitle}>
-      {filteredHolidays.length === 0 && (
-        <Card isAfterEvent holidayDate={new Date().toISOString()}>
+      <Show when={filteredHolidays?.length === 0}>
+        <Card isAfterEvent>
           <p>Tidak ada</p>
         </Card>
-      )}
+      </Show>
 
       <For each={filteredHolidays} fallback={<p>Loading...</p>}>
         {holiday => <CardPreview holidayDate={holiday.holiday_date} holidayName={holiday.holiday_name} />}
