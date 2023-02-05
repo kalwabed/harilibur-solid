@@ -19,10 +19,10 @@ export default function Home() {
   const extractedHoliday = useRouteData<typeof routeData>()
 
   return (
-    <RootLayout>
+    <>
       <UpcomingHolidays headerTitle="Bulan ini" upcomingHolidays={extractedHoliday()?.upcomings} />
       <AllHolidays headerTitle="Bulan depan" holidays={extractedHoliday()?.nextMonths} />
       <NavigationButton type="next" />
-    </RootLayout>
+    </>
   )
 }

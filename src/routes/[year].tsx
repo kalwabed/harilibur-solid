@@ -1,6 +1,5 @@
 import { createRouteData, Title, useParams, useRouteData } from 'solid-start'
 import AllHolidays from '~/components/all-holidays'
-import RootLayout from '~/components/layout/root-layout'
 import NavigationButton from '~/components/navigation-button'
 import { getHolidays } from '~/utils/fetcher'
 
@@ -20,11 +19,11 @@ const YearPage = () => {
   const year: string = params.year
 
   return (
-    <RootLayout>
+    <>
       <Title>{`${year} | Hari libur nasional dan hari besar di Indonesia`}</Title>
       <AllHolidays headerTitle={(new Date().getFullYear() + 1).toString()} holidays={holidays()} />
       <NavigationButton type="current" />
-    </RootLayout>
+    </>
   )
 }
 

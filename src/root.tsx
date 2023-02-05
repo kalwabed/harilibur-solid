@@ -3,6 +3,7 @@ import { Routes } from '@solidjs/router'
 import { Suspense } from 'solid-js'
 import { Body, Link, FileRoutes, Head, Html, Meta, Scripts, Title } from 'solid-start'
 import { ErrorBoundary } from 'solid-start/error-boundary'
+import RootLayout from './components/layout/root-layout'
 
 const canonicalURL = 'https://harilibur.vercel.app/'
 
@@ -32,9 +33,11 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Routes>
-              <FileRoutes />
-            </Routes>
+            <RootLayout>
+              <Routes>
+                <FileRoutes />
+              </Routes>
+            </RootLayout>
           </ErrorBoundary>
         </Suspense>
         <Scripts />
