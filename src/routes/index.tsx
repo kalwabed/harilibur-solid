@@ -1,7 +1,6 @@
 import { createRouteData, useRouteData } from 'solid-start'
 
 import AllHolidays from '~/components/all-holidays'
-import RootLayout from '~/components/layout/root-layout'
 import NavigationButton from '~/components/navigation-button'
 import UpcomingHolidays from '~/components/upcoming-holidays'
 import dateExtractor from '~/utils/date-extractor'

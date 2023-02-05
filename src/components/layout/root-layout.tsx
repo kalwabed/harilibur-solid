@@ -1,4 +1,5 @@
-import '@fontsource/inter/variable.css'
+import '@fontsource/inter/latin-700.css'
+import '@fontsource/inter/latin-400.css'
 import './root-layout.css'
 
 import { JSX } from 'solid-js'
