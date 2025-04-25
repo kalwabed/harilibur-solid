@@ -1,41 +1,38 @@
-import { For, Show } from "solid-js";
-
-import { HolidayFetcher } from "~/utils/fetcher";
+import type { HolidayFetcher } from "~/utils/fetcher";
 import Card from "./card";
 import CardPreview from "./card/card-preview";
 import GridWrapper from "./grid-wrapper";
+import { component$ } from "@builder.io/qwik";
 
 interface UpcomingHolidaysProps {
   headerTitle: string;
-  upcomingHolidays?: HolidayFetcher[];
+  upcomingHolidays: HolidayFetcher[];
 }
 
-const UpcomingHolidays = ({
-  headerTitle,
-  upcomingHolidays,
-}: UpcomingHolidaysProps) => {
-  const filteredHolidays = upcomingHolidays?.filter(
-    (upcome) => upcome.is_national_holiday,
-  );
+const UpcomingHolidays = component$(
+  ({ headerTitle, upcomingHolidays }: UpcomingHolidaysProps) => {
+    const filteredHolidays = upcomingHolidays.filter(
+      (upcome) => upcome.is_national_holiday,
+    );
 
-  return (
-    <GridWrapper headerTitle={headerTitle}>
-      <Show when={filteredHolidays?.length === 0}>
-        <Card isAfterEvent>
-          <p>Tidak ada</p>
-        </Card>
-      </Show>
+    return (
+      <GridWrapper headerTitle={headerTitle}>
+        {filteredHolidays.length === 0 ? (
+          <Card isAfterEvent>
+            <p>Tidak ada</p>
+          </Card>
+        ) : null}
 
-      <For each={filteredHolidays} fallback={<p>Loading...</p>}>
-        {(holiday) => (
+        {filteredHolidays.map((holiday) => (
           <CardPreview
+            key={holiday.holiday_date}
             holidayDate={holiday.holiday_date}
             holidayName={holiday.holiday_name}
           />
-        )}
-      </For>
-    </GridWrapper>
-  );
-};
+        ))}
+      </GridWrapper>
+    );
+  },
+);
 
 export default UpcomingHolidays;

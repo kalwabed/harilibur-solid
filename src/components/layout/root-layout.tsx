@@ -2,11 +2,10 @@ import "@fontsource/inter/latin-700.css";
 import "@fontsource/inter/latin-400.css";
 import "./root-layout.css";
 
-import { JSX } from "solid-js";
-
 import { today } from "~/utils/date-formatter";
+import { Slot, component$ } from "@builder.io/qwik";
 
-const RootLayout = ({ children }: { children: JSX.Element }) => {
+const RootLayout = component$(() => {
   return (
     <div id="root">
       <header>
@@ -14,7 +13,9 @@ const RootLayout = ({ children }: { children: JSX.Element }) => {
         <div class="divider"></div>
         <p class="today">Hari ini: {today()}</p>
       </header>
-      <main>{children}</main>
+      <main>
+        <Slot />
+      </main>
       <footer>
         <a
           href="https://api-harilibur.vercel.app"
@@ -35,6 +36,6 @@ const RootLayout = ({ children }: { children: JSX.Element }) => {
       </footer>
     </div>
   );
-};
+});
 
 export default RootLayout;
