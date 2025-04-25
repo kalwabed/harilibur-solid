@@ -33,10 +33,4 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "Hari libur nasional dan hari besar di Indonesia",
-  meta: [
-    {
-      name: "description",
-      content: "Daftar hari libur nasional di Indonesia.",
-    },
-  ],
 };
