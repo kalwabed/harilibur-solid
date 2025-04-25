@@ -1,4 +1,3 @@
-
 dist
 .solid
 .output
@@ -23,3 +22,6 @@ gitignore
 # System Files
 .DS_Store
 Thumbs.db
+
+# Cloudflare
+functions/**/*.js
