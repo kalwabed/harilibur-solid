@@ -26,6 +26,10 @@ export const RouterHead = component$(() => {
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="id-ID" />
       <meta name="robots" content="index,follow" />
+      <meta
+        name="description"
+        content="Daftar hari libur nasional di Indonesia."
+      />
       <meta property="og:site_name" content="Hari Libur Nasional Indonesia" />
       <meta name="keywords" content="hari libur, libur, hari libur indonesia" />
       <meta property="twitter:card" content="summary_large_image" />
