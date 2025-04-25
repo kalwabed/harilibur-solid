@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
+import { DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
 import AllHolidays from "~/components/all-holidays";
 import NavigationButton from "~/components/navigation-button";
 import { getHolidays } from "~/utils/fetcher";
@@ -13,8 +13,6 @@ export const useHolidays = routeLoader$(async (req) => {
 
 const YearPage = component$(() => {
   const holidays = useHolidays();
-  // const location = useLocation();
-  // const year: string = location.params.year;
 
   return (
     <>
@@ -27,5 +25,13 @@ const YearPage = component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = ({ params }) => {
+  const year: string = params.year;
+
+  return {
+    title: `${year} | Hari libur nasional dan hari besar di Indonesia`,
+  };
+};
 
 export default YearPage;
