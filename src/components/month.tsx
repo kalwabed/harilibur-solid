@@ -1,13 +1,13 @@
-import styles from './month.module.css'
-import { JSX } from 'solid-js'
+import { Slot, component$ } from "@builder.io/qwik";
+import styles from "./month.module.css";
 
-const Month = ({ month, children }: { month: string; children: JSX.Element }) => {
+const Month = component$(({ month }: { month: string }) => {
   return (
     <div class={styles.month_wrapper}>
       <h3 class={styles.month}>{month}</h3>
-      {children}
+      <Slot />
     </div>
-  )
-}
+  );
+});
 
-export default Month
+export default Month;

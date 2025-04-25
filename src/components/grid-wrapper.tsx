@@ -1,14 +1,13 @@
-import { JSX } from 'solid-js'
+import { Slot, component$ } from "@builder.io/qwik";
+import styles from "./grid-wrapper.module.css";
 
-import styles from './grid-wrapper.module.css'
-
-const GridWrapper = ({ headerTitle, children }: { headerTitle: string; children: JSX.Element }) => {
+const GridWrapper = component$(({ headerTitle }: { headerTitle: string }) => {
   return (
     <section class={styles.section}>
       <h2 class={styles.h2}>{headerTitle}</h2>
-      {children}
+      <Slot />
     </section>
-  )
-}
+  );
+});
 
-export default GridWrapper
+export default GridWrapper;
