@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+ 
+Sitemap: https://harilibur.pages.dev/dynamic-sitemap.xml
