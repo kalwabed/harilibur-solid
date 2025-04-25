@@ -26,7 +26,7 @@ const RootLayout = component$(() => {
           Sumber data
         </a>
         <a
-          href="https://github.com/kalwabed/harilibur"
+          href="https://github.com/kalwabed/harilibur-solid"
           title="Github repository"
           class="link"
         >

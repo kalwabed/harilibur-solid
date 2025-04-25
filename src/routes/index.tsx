@@ -9,7 +9,6 @@ import { getHolidays } from "~/utils/fetcher";
 export const useHolidays = routeLoader$(async () => {
   const holidays = await getHolidays();
   const extractedHoliday = dateExtractor(holidays);
-  console.log(holidays, "ex", extractedHoliday);
 
   return extractedHoliday;
 });
