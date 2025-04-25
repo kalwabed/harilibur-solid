@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { getHolidays } from "./fetcher";
 
 describe("Fetcher", () => {
