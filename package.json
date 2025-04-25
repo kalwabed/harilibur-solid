@@ -18,7 +18,7 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "lint": "eslint \"src/**/*.ts*\"",
+    "lint": "eslint .",
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
     "start": "vite --open --mode ssr",
@@ -29,6 +29,8 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.13.0",
     "@builder.io/qwik-city": "^1.13.0",
+    "@eslint/css": "^0.7.0",
+    "@eslint/json": "^0.12.0",
     "@types/eslint": "9.6.1",
     "@types/node": "22.15.2",
     "@typescript-eslint/eslint-plugin": "8.31.0",

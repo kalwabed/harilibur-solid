@@ -6,6 +6,7 @@ export default extendConfig(baseConfig, () => {
   return {
     build: {
       ssr: true,
+      cssMinify: "lightningcss",
       rollupOptions: {
         input: ["src/entry.cloudflare-pages.tsx", "@qwik-city-plan"],
       },
