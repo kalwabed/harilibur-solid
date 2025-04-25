@@ -1,34 +1,34 @@
-import type { HolidayFetcher } from './fetcher'
+import type { HolidayFetcher } from "./fetcher";
 
 export interface ExtractedDate {
-  upcomings: HolidayFetcher[]
-  nextMonths: HolidayFetcher[]
-  previousMonths: HolidayFetcher[]
+  upcomings: HolidayFetcher[];
+  nextMonths: HolidayFetcher[];
+  previousMonths: HolidayFetcher[];
 }
 
-type HolidayResult = { [month: string]: HolidayFetcher[] }
+type HolidayResult = { [month: string]: HolidayFetcher[] };
 
 // reverse the order of the month
 // because the API returns the data in ascending order
 export function reversedHolidayResult(holidayResult: HolidayResult) {
-  const reversedHolidayResult: HolidayResult = {}
+  const reversedHolidayResult: HolidayResult = {};
   Object.keys(holidayResult)
     .reverse()
-    .forEach(month => {
-      reversedHolidayResult[month] = holidayResult[month]
-    })
+    .forEach((month) => {
+      reversedHolidayResult[month] = holidayResult[month];
+    });
 
-  return reversedHolidayResult
+  return reversedHolidayResult;
 }
 
 export function sortDate(holidayResult: HolidayFetcher[]) {
   holidayResult.sort((a, b) => {
-    const aDate = new Date(a.holiday_date)
-    const bDate = new Date(b.holiday_date)
-    return aDate.getDate() - bDate.getDate()
-  })
+    const aDate = new Date(a.holiday_date);
+    const bDate = new Date(b.holiday_date);
+    return aDate.getDate() - bDate.getDate();
+  });
 
-  return holidayResult
+  return holidayResult;
 }
 
 const dateExtractor = (holiday: HolidayFetcher[]) => {
@@ -36,22 +36,24 @@ const dateExtractor = (holiday: HolidayFetcher[]) => {
     upcomings: [],
     nextMonths: [],
     previousMonths: [],
-  }
+  };
 
-  const thisMonth = new Date().getMonth() + 1
-  holiday?.filter(res => {
-    const formattedHolidayMonth = new Date(res.holiday_date).getMonth() + 1
+  const thisMonth = new Date().getMonth() + 1;
+  holiday?.filter((res) => {
+    const formattedHolidayMonth = new Date(res.holiday_date).getMonth() + 1;
 
     if (formattedHolidayMonth === thisMonth) {
-      data.upcomings.push(res)
+      data.upcomings.push(res);
     } else if (formattedHolidayMonth > thisMonth) {
-      data.nextMonths.push(res)
+      data.nextMonths.push(res);
     } else {
-      data.previousMonths.push(res)
+      data.previousMonths.push(res);
     }
-  })
+  });
 
-  return data
-}
+  data.upcomings = sortDate(data.upcomings);
 
-export default dateExtractor
+  return data;
+};
+
+export default dateExtractor;
