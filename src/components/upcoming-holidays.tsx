@@ -1,17 +1,22 @@
-import { For, Show } from 'solid-js'
+import { For, Show } from "solid-js";
 
-import { HolidayFetcher } from '~/utils/fetcher'
-import Card from './card'
-import CardPreview from './card/card-preview'
-import GridWrapper from './grid-wrapper'
+import { HolidayFetcher } from "~/utils/fetcher";
+import Card from "./card";
+import CardPreview from "./card/card-preview";
+import GridWrapper from "./grid-wrapper";
 
 interface UpcomingHolidaysProps {
-  headerTitle: string
-  upcomingHolidays: HolidayFetcher[]
+  headerTitle: string;
+  upcomingHolidays?: HolidayFetcher[];
 }
 
-const UpcomingHolidays = ({ headerTitle, upcomingHolidays }: UpcomingHolidaysProps) => {
-  const filteredHolidays = upcomingHolidays?.filter(upcome => upcome.is_national_holiday)
+const UpcomingHolidays = ({
+  headerTitle,
+  upcomingHolidays,
+}: UpcomingHolidaysProps) => {
+  const filteredHolidays = upcomingHolidays?.filter(
+    (upcome) => upcome.is_national_holiday,
+  );
 
   return (
     <GridWrapper headerTitle={headerTitle}>
@@ -22,10 +27,15 @@ const UpcomingHolidays = ({ headerTitle, upcomingHolidays }: UpcomingHolidaysPro
       </Show>
 
       <For each={filteredHolidays} fallback={<p>Loading...</p>}>
-        {holiday => <CardPreview holidayDate={holiday.holiday_date} holidayName={holiday.holiday_name} />}
+        {(holiday) => (
+          <CardPreview
+            holidayDate={holiday.holiday_date}
+            holidayName={holiday.holiday_name}
+          />
+        )}
       </For>
     </GridWrapper>
-  )
-}
+  );
+};
 
-export default UpcomingHolidays
+export default UpcomingHolidays;

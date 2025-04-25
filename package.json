@@ -1,36 +1,33 @@
 {
   "name": "solid-harilibur",
   "scripts": {
-    "dev": "solid-start dev",
-    "build": "solid-start build",
-    "start": "solid-start start",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
     "test": "vitest run",
     "test-watch": "vitest",
-    "test-ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "test-ui": "vitest --ui"
   },
   "type": "module",
   "devDependencies": {
-    "@solidjs/meta": "^0.28.2",
-    "@solidjs/router": "^0.7.0",
-    "@solidjs/testing-library": "^0.5.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@types/testing-library__jest-dom": "^5.14.5",
-    "@vitest/coverage-c8": "^0.26.3",
-    "@vitest/ui": "^0.26.3",
-    "jsdom": "^20.0.3",
-    "solid-js": "^1.6.9",
-    "solid-start": "^0.2.19",
-    "solid-start-node": "^0.2.19",
-    "solid-start-static": "^0.2.19",
-    "solid-start-vercel": "^0.2.19",
-    "typescript": "^4.9.4",
-    "undici": "^5.15.1",
-    "vite": "^3.2.5",
-    "vitest": "^0.26.3"
+    "@solidjs/meta": "^0.29.4",
+    "@solidjs/router": "^0.15.0",
+    "@solidjs/start": "^1.1.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitest/ui": "3.0.5",
+    "jsdom": "^25.0.1",
+    "solid-js": "^1.9.3",
+    "typescript": "^5.6.3",
+    "vinxi": "^0.5.3",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.6",
+    "vitest": "3.0.5"
   },
   "dependencies": {
-    "@fontsource/inter": "^4.5.15",
-    "date-fns": "^2.29.3"
+    "@fontsource/inter": "^5.2.5",
+    "date-fns": "^4.1.0"
   }
 }
+
